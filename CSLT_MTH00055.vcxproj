@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="Lab1.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\tano-dev\CSLT_MTH00055\24HE1A_23110163_NguyenVanPhucHuy.drawio" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -19,4 +19,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\tano-dev\CSLT_MTH00055\24HE1A_23110163_NguyenVanPhucHuy.drawio">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
