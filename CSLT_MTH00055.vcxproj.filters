@@ -15,7 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lab1.c">
+    <ClCompile Include="Bài tập - Lập trình C - Chuỗi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bài tập - Lập trình C - Mảng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BÀI TẬP LẬP TRÌNH C – CÁC LỆNH.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

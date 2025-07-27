@@ -327,37 +327,37 @@ step 4 (while): n = 1, currentDigit = 1, prevDigit = 2 -> isIncreasing = 0, isDe
 
 */
 
-#include <stdio.h>
-int main() {
-	int n, prevDigit, currentDigit;
-	int isIncreasing = 1, isDecreasing = 1;
-	printf("Nhap mot so nguyen duong n (n >= 10): ");
-	scanf_s("%d", &n);
-	if (n < 10) {
-		printf("So nhap vao phai la mot so nguyen duong lon hon hoac bang 10.\n");
-		return 1; // Kết thúc chương trình nếu số không hợp lệ
-	}
-	prevDigit = n % 10; // Lấy chữ số cuối cùng
-	n /= 10; // Loại bỏ chữ số cuối cùng
-	while (n > 0) {
-		currentDigit = n % 10; // Lấy chữ số tiếp theo
-		n /= 10; // Loại bỏ chữ số này
-		if (currentDigit < prevDigit) {
-			isIncreasing = 0; // Nếu chữ số hiện tại nhỏ hơn chữ số trước đó, không phải tăng dần
-		}
-		if (currentDigit > prevDigit) {
-			isDecreasing = 0; // Nếu chữ số hiện tại lớn hơn chữ số trước đó, không phải giảm dần
-		}
-		prevDigit = currentDigit; // Cập nhật chữ số trước đó
-	}
-	if (isIncreasing) {
-		printf("So nguyen duong co cac chu so tang dan.\n");
-	}
-	else if (isDecreasing) {
-		printf("So nguyen duong co cac chu so giam dan.\n");
-	}
-	else {
-		printf("So nguyen duong khong co cac chu so tang dan hoac giam dan.\n");
-	}
-	return 0;
-}
+//#include <stdio.h>
+//int main() {
+//	int n, prevDigit, currentDigit;
+//	int isIncreasing = 1, isDecreasing = 1;
+//	printf("Nhap mot so nguyen duong n (n >= 10): ");
+//	scanf_s("%d", &n);
+//	if (n < 10) {
+//		printf("So nhap vao phai la mot so nguyen duong lon hon hoac bang 10.\n");
+//		return 1; // Kết thúc chương trình nếu số không hợp lệ
+//	}
+//	prevDigit = n % 10; // Lấy chữ số cuối cùng
+//	n /= 10; // Loại bỏ chữ số cuối cùng
+//	while (n > 0) {
+//		currentDigit = n % 10; // Lấy chữ số tiếp theo
+//		n /= 10; // Loại bỏ chữ số này
+//		if (currentDigit < prevDigit) {
+//			isIncreasing = 0; // Nếu chữ số hiện tại nhỏ hơn chữ số trước đó, không phải tăng dần
+//		}
+//		if (currentDigit > prevDigit) {
+//			isDecreasing = 0; // Nếu chữ số hiện tại lớn hơn chữ số trước đó, không phải giảm dần
+//		}
+//		prevDigit = currentDigit; // Cập nhật chữ số trước đó
+//	}
+//	if (isIncreasing) {
+//		printf("So nguyen duong co cac chu so tang dan.\n");
+//	}
+//	else if (isDecreasing) {
+//		printf("So nguyen duong co cac chu so giam dan.\n");
+//	}
+//	else {
+//		printf("So nguyen duong khong co cac chu so tang dan hoac giam dan.\n");
+//	}
+//	return 0;
+//}
