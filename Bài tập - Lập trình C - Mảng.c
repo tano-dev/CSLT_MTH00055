@@ -39,6 +39,9 @@ int getMin(int a[], int n) {
 	}
 	return min;
 }
+int arrLength(int a[]) {
+	return sizeof(a) / sizeof(a[0]);
+}
 /*
 1. Viết chương trình tính tổng các phần tử là số nguyên tố của một mảng nguyên
 */
@@ -226,6 +229,9 @@ dãy số {2, 3, 4, 5, 5, 4, 5, 6, 7, 8, 9, 0, 1, 2, 2}, xuất ra:
 Dãy con thứ 1: 2, 3, 4, 5, 5
 Dãy con thứ 2: 4, 5, 6, 7, 8, 9
 Dãy con thứ 3: 0, 1, 2, 2
+
+15
+2 3 4 5 5 4 5 6 7 8 9 0 1 2 2
 */
 int main() {
 	int n;
@@ -237,15 +243,34 @@ int main() {
 		scanf("%d", &a[i]);
 	}
 	int holderArr[n] = {};
+	int index = 0;
 	for (int i = 1; i < n; i++) {
 		int prevValue = a[i - 1];
 		if (prevValue > a[i]) {
-			holderArr[0] = i;
+			holderArr[index] = i;
+			index++;
 		}
 	}
-	for (int i = 0; i < n; i++) {
-		printf("\nholderArr[%d] = %d", i, holderArr[i]);
+	// 	for (int i = 0; i < n; i++) {
+	// 		printf("\nholderArr[%d] = %d", i, holderArr[i]);
+	// 	}
+
+	for (int i = 0; i <= index; i++) {
+		printf("\nDay con thu %d: ", i + 1);
+		if (i == 0) {
+			for (int j = 0; j < holderArr[i]; j++) {
+				printf("%d, ", a[j]);
+			}
+		}
+		else if (i == index) {
+			for (int j = holderArr[i - 1]; j < n; j++) {
+				printf("%d, ", a[j]);
+			}
+		}
+		else {
+			for (int j = holderArr[i - 1]; j < holderArr[i]; j++) {
+				printf("%d, ", a[j]);
+			}
+		}
 	}
-	int smallArrs = sumArr(holderArr, n);
-//complete it
 }
