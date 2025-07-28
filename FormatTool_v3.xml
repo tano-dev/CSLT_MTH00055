@@ -76,9 +76,9 @@
     "title": "module_ex"
   },
   {
-    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"&amp;lt;b&amp;gt;Tiêu đề mô-đun&amp;lt;/b&amp;gt;&amp;lt;div&amp;gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;Tên mô-đun: tinhDienTichHCN&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Tham số: num chieuDai, num chieuRong&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Kiểu trả về: num&amp;lt;/li&amp;gt;&amp;lt;li&amp;gt;Mô tả: tính diện tích hình chữ nhật&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt;/div&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;align=left;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"306.69\" height=\"130\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
-    "w": 306.69,
-    "h": 130,
+    "xml": "&lt;mxGraphModel&gt;&lt;root&gt;&lt;mxCell id=\"0\"/&gt;&lt;mxCell id=\"1\" parent=\"0\"/&gt;&lt;mxCell id=\"2\" value=\"avg = average(a, b)\" style=\"shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;size=0.03571428571428571;\" vertex=\"1\" parent=\"1\"&gt;&lt;mxGeometry width=\"280\" height=\"60\" as=\"geometry\"/&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;",
+    "w": 280,
+    "h": 60,
     "aspect": "fixed"
   }
 ]</mxlibrary>
