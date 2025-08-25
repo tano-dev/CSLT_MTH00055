@@ -49,17 +49,21 @@ void swap(int* a, int* b) {
 	*a = *b;
 	*b = temp;
 }
-
+void printArray(int a[], int n) {
+	for (int i = 0; i < n; i++) {
+		printf("%d ", a[i]);
+	}
+}
 int main() {
 	int n;
-	printf("Do dai mang: \n");
-	scanf_s("%d", &n);
+	printf("Do dai mang: ");
+	scanf("%d", &n);
 	int a[n];
-	printf("Phan tu:\n");
+	printf("\nPhan tu:\n");
 	for (int i = 0; i < n; i++) {
 		printf("\narr[%d] = ", i);
-		scanf_s("%d", &a[i]);
+		scanf("%d", &a[i]);
 	}
-
+	printArray(a, n);
 	return 0;
 }
