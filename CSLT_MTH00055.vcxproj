@@ -130,7 +130,7 @@
     <ClCompile Include="Bài tập - Lập trình C - Chuỗi.c" />
     <ClCompile Include="Bài tập - Lập trình C - Mảng.c" />
     <ClCompile Include="BÀI TẬP LẬP TRÌNH C – CÁC LỆNH.c" />
-    <ClCompile Include="test3.c" />
+    <ClCompile Include="23110163_kt3.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\tano-dev\CSLT_MTH00055\24HE1A_23110163_NguyenVanPhucHuy.drawio" />

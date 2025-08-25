@@ -24,7 +24,7 @@
     <ClCompile Include="BÀI TẬP LẬP TRÌNH C – CÁC LỆNH.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="test3.c">
+    <ClCompile Include="23110163_kt3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
