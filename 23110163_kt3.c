@@ -1,9 +1,8 @@
 #include <stdio.h>
-// Additional Functions
 int isPrimeNumber(int num) {
-	if (num < 2) return 0; // 0 and 1 are not prime numbers
+	if (num < 2) return 0; 
 	for (int i = 2; i * i <= num; i++) {
-		if (num % i == 0) return 0; // Not a prime number
+		if (num % i == 0) return 0;
 	}
 	return 1; // Is a prime number
 }
@@ -44,6 +43,23 @@ int getMin(int a[], int n) {
 	}
 	return min;
 }
-int arrLength(int a[]) {
-	return sizeof(a) / sizeof(a[0]);
+
+void swap(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int main() {
+	int n;
+	printf("Do dai mang: \n");
+	scanf_s("%d", &n);
+	int a[n];
+	printf("Phan tu:\n");
+	for (int i = 0; i < n; i++) {
+		printf("\narr[%d] = ", i);
+		scanf_s("%d", &a[i]);
+	}
+
+	return 0;
 }
