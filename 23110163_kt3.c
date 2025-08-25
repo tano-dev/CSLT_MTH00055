@@ -25,11 +25,11 @@ int timSoLuotViewCaoNhat(int luotXemVideo[], int soVideo) {
 
 
 double tinhLuotXemTrungBinh(int luotXemVideo[], int soVideo) {
-	float sum = 0;
+	double sum = 0;
 	for (int i = 0; i < soVideo; i++) {
 		sum += luotXemVideo[i];
 	}
-	return sum / soVideo;
+	return (double) sum / soVideo;
 }
 
 
