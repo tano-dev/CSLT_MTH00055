@@ -16,7 +16,7 @@ void nhapSoLuotXem(int luotXemVideo[], int soVideo) {
 int timSoLuotViewCaoNhat(int luotXemVideo[], int soVideo) {
 	int max = 0;
 	for (int i = 1; i < soVideo; i++) {
-		if (luotXemVideo[i] > max) {
+		if (luotXemVideo[i] > luotXemVideo[max]) {
 			max = i;
 		}
 	}
