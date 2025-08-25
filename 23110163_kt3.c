@@ -1,69 +1,60 @@
 #include <stdio.h>
-int isPrimeNumber(int num) {
-	if (num < 2) return 0; 
-	for (int i = 2; i * i <= num; i++) {
-		if (num % i == 0) return 0;
-	}
-	return 1; // Is a prime number
-}
-int sumArr(int a[], int n) {
-	int sum = 0;
-	for (int i = 0; i < n; i++) {
-		sum += a[i];
-	}
-	return sum;
-}
-float mean(int a[], int n) {
-	float sum = 0;
-	for (int i = 0; i < n; i++) {
-		sum += a[i];
-	}
-	return sum / n;
-}
-void initArr(int a[], int n) {
-	for (int i = 0; i < n; i++) {
-		a[i] = 0;
+
+void inMang(int luotXemVideo[], int soVideo) {
+	for (int i = 0; i < soVideo; i++) {
+		printf("%d ", luotXemVideo[i]);
 	}
 }
-int getMax(int a[], int n) {
-	int max = a[0];
-	for (int i = 1; i < n; i++) {
-		if (a[i] > max) {
-			max = a[i];
+
+void nhapSoLuotXem(int luotXemVideo[], int soVideo) {
+	for (int i = 0; i < soVideo; i++) {
+		printf("video  %d: ", i + 1);
+		scanf("%d", &luotXemVideo[i]);
+	}
+}
+
+int timSoLuotViewCaoNhat(int luotXemVideo[], int soVideo) {
+	int max = 0;
+	for (int i = 1; i < soVideo; i++) {
+		if (luotXemVideo[i] > max) {
+			max = i;
 		}
 	}
 	return max;
 }
-int getMin(int a[], int n) {
-	int min = a[0];
-	for (int i = 1; i < n; i++) {
-		if (a[i] < min) {
-			min = a[i];
-		}
+
+
+double tinhLuotXemTrungBinh(int luotXemVideo[], int soVideo) {
+	float sum = 0;
+	for (int i = 0; i < soVideo; i++) {
+		sum += luotXemVideo[i];
 	}
-	return min;
+	return sum / soVideo;
 }
 
-void swap(int* a, int* b) {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-void printArray(int a[], int n) {
-	for (int i = 0; i < n; i++) {
-		printf("%d ", a[i]);
-	}
-}
+
 int main() {
-	int n;
-	printf("Do dai mang: ");
-	scanf("%d", &n);
-	int a[n];
-	printf("\nPhan tu:\n");
-	for (int i = 0; i < n; i++) {
-		printf("\narr[%d] = ", i);
-		scanf("%d", &a[i]);
+	int soVideo = 7;
+
+	int luotXemVideo[soVideo];
+	printf("\nSo luot xem:\n");
+
+	nhapSoLuotXem(luotXemVideo, soVideo);
+	inMang(luotXemVideo, soVideo);
+
+	int videoViewCaoNhat = timSoLuotViewCaoNhat(luotXemVideo, soVideo);
+	printf("\nVideo co luot view cao nhat la %d: %d", videoViewCaoNhat + 1, luotXemVideo[videoViewCaoNhat]);
+
+	double viewTrungBinh = tinhLuotXemTrungBinh(luotXemVideo, soVideo);
+	printf("\nSo luot view  trung binh: %.2f", viewTrungBinh);
+
+
+	printf("\nVideo co luot view lon hon trung binh: ");
+	for (int i = 0; i < soVideo; i++) {
+		if ((double) luotXemVideo[i] > viewTrungBinh) {
+			printf("\nvideo %d: %d ", i+1,luotXemVideo[i]);
+			
+		}
 	}
-	printArray(a, n);
 	return 0;
 }
