@@ -43,7 +43,7 @@ int main() {
 	inMang(luotXemVideo, soVideo);
 
 	int videoViewCaoNhat = timSoLuotViewCaoNhat(luotXemVideo, soVideo);
-	printf("\nVideo co luot view cao nhat la %d: %d", videoViewCaoNhat + 1, luotXemVideo[videoViewCaoNhat]);
+	printf("\nVideo co view cao nhat la %d: %d", videoViewCaoNhat + 1, luotXemVideo[videoViewCaoNhat]);
 
 	double viewTrungBinh = tinhLuotXemTrungBinh(luotXemVideo, soVideo);
 	printf("\nSo luot view  trung binh: %.2f", viewTrungBinh);
@@ -58,3 +58,17 @@ int main() {
 	}
 	return 0;
 }
+
+/*
+input: 100 100 300 400 200 500 50
+output:
+
+So luot xem:
+video  1: video  2: video  3: video  4: video  5: video  6: video  7: 100 100 300 400 200 500 50
+Video co view cao nhat la 6: 500
+So luot view  trung binh: 235.71
+Video co luot view lon hon trung binh:
+video 3: 300
+video 4: 400
+video 6: 500
+*/
