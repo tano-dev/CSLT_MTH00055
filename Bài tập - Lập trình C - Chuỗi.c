@@ -280,3 +280,249 @@ int main() {
 	printf("Tu dai nhat: \"%s\"\n", maxWord);
 	return 0;
 }
+
+/*
+10. Viết chương trình đọc một câu và thay thế các ký tự chữ thường bằng chữ hoa và ngược
+lại. Ví dụ: nhập chuỗi "This Is A Test String.", xuất ra:
+Câu đã cho là: This Is A Test String.
+Sau khi thay đổi chữ hoa chữ thường, chuỗi là: tHIS iS a tEST sTRING.
+*/
+
+#include <stdio.h>
+int main() {
+	char str[100];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+		if (str[i] >= 'a' && str[i] <= 'z') {
+			str[i] = str[i] - ('a' - 'A'); // Chuyển chữ thường thành chữ hoa
+		}
+		else if (str[i] >= 'A' && str[i] <= 'Z') {
+			str[i] = str[i] + ('a' - 'A'); // Chuyển chữ hoa thành chữ thường
+		}
+	}
+	printf("Cau sau khi thay doi chu hoa chu thuong: %s", str);
+	return 0;
+}
+/*
+11. Viết chương trình tính số lần một từ xuất hiện trong chuỗi đã cho. Ví dụ: nhập chuỗi
+"The string where the word the present more than once.", từ "the", xuất ra:
+Tần suất xuất hiện của từ "the" là: 3
+*/
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char str[200];
+	char word[50];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	printf("Nhap tu can dem: \n");
+	fgets(word, sizeof(word), stdin);
+	// Loại bỏ ký tự xuống dòng ở cuối từ
+	int lenWord = 0;
+	while (word[lenWord] != '\0' && word[lenWord] != '\n') lenWord++;
+	word[lenWord] = '\0';
+	int count = 0;
+	int lenStr = 0;
+	while (str[lenStr] != '\0' && str[lenStr] != '\n') lenStr++;
+	for (int i = 0; i <= lenStr - lenWord; i++) {
+		int j;
+		for (j = 0; j < lenWord; j++) {
+			if (str[i + j] != word[j]) {
+				break;
+			}
+		}
+		if (j == lenWord) {
+			count++;
+			i += lenWord - 1; // Di chuyển chỉ số i để tránh đếm chồng lắp
+		}
+	}
+	printf("Tan suat xuat hien cua tu \"%s\" la: %d\n", word, count);
+	return 0;
+}
+// khong dung string.h
+
+#include <stdio.h>
+int main() {
+	char str[200];
+	char word[50];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	printf("Nhap tu can dem: \n");
+	fgets(word, sizeof(word), stdin);
+	// Loại bỏ ký tự xuống dòng ở cuối từ
+	int lenWord = 0;
+	while (word[lenWord] != '\0' && word[lenWord] != '\n') lenWord++;
+	word[lenWord] = '\0';
+	int count = 0;
+	int lenStr = 0;
+	while (str[lenStr] != '\0' && str[lenStr] != '\n') lenStr++;
+	for (int i = 0; i <= lenStr - lenWord; i++) {
+		int j;
+		for (j = 0; j < lenWord; j++) {
+			if (str[i + j] != word[j]) {
+				break;
+			}
+		}
+		if (j == lenWord) {
+			count++;
+			i += lenWord - 1; // Di chuyển chỉ số i để tránh đếm chồng lắp
+		}
+	}
+	printf("Tan suat xuat hien cua tu \"%s\" la: %d\n", word, count);
+	return 0;
+}
+/*
+12. Viết chương trình xóa các ký tự khỏi một chuỗi ngoại trừ các chữ cái. Ví dụ nhập chuỗi
+“227 Nguyen Van Cu, Q. 5”, xuất ra:
+Chuỗi sau khi loại bỏ: Nguyen Van Cu Q
+*/
+#include <stdio.h>
+int main() {
+	char str[100];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	char result[100];
+	int index = 0;
+	for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || str[i] == ' ') {
+			result[index++] = str[i];
+		}
+	}
+	result[index] = '\0'; // Kết thúc chuỗi
+	printf("Chuoi sau khi loai bo: %s\n", result);
+	return 0;
+}
+
+/*
+13. Viết một chương trình để kết hợp hai chuỗi không sử dụng các hàm của thư viện
+string.h. Ví dụ, nhập chuỗi thứ nhất "This is string one.", chuỗi thứ hai "This is string
+two.", xuất ra:
+Sau khi kết hợp chuỗi là: This is string one. This is string two.
+*/
+#include <stdio.h>
+int main() {
+	char str1[100];
+	char str2[100];
+	printf("Nhap chuoi thu nhat: \n");
+	fgets(str1, sizeof(str1), stdin);
+	printf("Nhap chuoi thu hai: \n");
+	fgets(str2, sizeof(str2), stdin);
+	// Loại bỏ ký tự xuống dòng ở cuối chuỗi thứ nhất
+	int len1 = 0;
+	while (str1[len1] != '\0' && str1[len1] != '\n') len1++;
+	str1[len1] = ' '; // Thêm khoảng trắng giữa hai chuỗi
+	len1++;
+	// Kết hợp chuỗi thứ hai vào chuỗi thứ nhất
+	int i = 0;
+	while (str2[i] != '\0' && str2[i] != '\n') {
+		str1[len1++] = str2[i++];
+	}
+	str1[len1] = '\0'; // Kết thúc chuỗi
+	printf("Sau khi ket hop chuoi la: %s\n", str1);
+	return 0;
+}
+
+/*
+14. Viết một chương trình để tách chuỗi thành các từ bởi khoảng trắng. Ví dụ, nhập chuỗi
+"This is a test string", xuất ra:
+Từ sau khi tách bởi khoảng trắng là:
+This
+is
+a
+test
+string
+*/
+#include <stdio.h>
+int main() {
+	char str[100];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	char word[100];
+	int index = 0;
+	printf("Tu sau khi tach boi khoang trang la:\n");
+	for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+		if (str[i] != ' ') {
+			word[index++] = str[i];
+		}
+		else {
+			if (index > 0) {
+				word[index] = '\0'; // Kết thúc từ
+				printf("%s\n", word);
+				index = 0; // Reset chỉ số từ
+			}
+		}
+	}
+	// In từ cuối cùng nếu có
+	if (index > 0) {
+		word[index] = '\0';
+		printf("%s\n", word);
+	}
+	return 0;
+}
+/*
+15. Viết một chương trình để đếm từng ký tự trong một chuỗi. Ví dụ, nhập chuỗi "Hello",
+xuất ra:
+Số lượng của mỗi ký tự trong chuỗi là:
+H 1
+e 1
+l 2
+o 1
+*/
+#include <stdio.h>
+int main() {
+	char str[100];
+	printf("Nhap chuoi: \n");
+	fgets(str, sizeof(str), stdin);
+	int frequency[256] = { 0 }; // Mảng đếm tần suất ký tự
+	for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+		frequency[(unsigned char)str[i]]++;
+	}
+	printf("So luong cua moi ky tu trong chuoi la:\n");
+	for (int i = 0; i < 256; i++) {
+		if (frequency[i] > 0) {
+			printf("%c %d\n", (char)i, frequency[i]);
+		}
+	}
+	return 0;
+}
+/*
+16. Viết chương trình nhập nhiều chuỗi và sắp xếp chúng theo chiều tăng dần. Ví dụ: nhập
+“one”, rồi “three”, rồi “two”, xuất ra:
+one two three
+*/
+#include <stdio.h>
+#include <string.h>
+int main() {
+	char strings[10][100];
+	int n;
+	printf("Nhap so luong chuoi: ");
+	scanf("%d", &n);
+	getchar(); // Đọc ký tự newline sau khi nhập số
+	for (int i = 0; i < n; i++) {
+		printf("Nhap chuoi thu %d: ", i + 1);
+		fgets(strings[i], sizeof(strings[i]), stdin);
+		// Loại bỏ ký tự xuống dòng ở cuối chuỗi
+		int len = 0;
+		while (strings[i][len] != '\0' && strings[i][len] != '\n') len++;
+		strings[i][len] = '\0';
+	}
+	// Sắp xếp chuỗi theo thứ tự tăng dần
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (strcmp(strings[i], strings[j]) > 0) {
+				char temp[100];
+				strcpy(temp, strings[i]);
+				strcpy(strings[i], strings[j]);
+				strcpy(strings[j], temp);
+			}
+		}
+	}
+	printf("Chuoi sau khi sap xep theo chieu tang dan:\n");
+	for (int i = 0; i < n; i++) {
+		printf("%s ", strings[i]);
+	}
+	printf("\n");
+	return 0;
+}
+
